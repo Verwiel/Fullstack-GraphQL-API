@@ -1,0 +1,29 @@
+type User {
+  id: ID! @id
+  email: String! @unique
+  password: String!
+  name: String!
+  posts: [Post!]!
+  pictures: [Picture!]!
+}
+
+type Picture {
+  id: ID! @id
+  published: Boolean! @default(value: false)
+  date: String!
+  title: String!
+  caption: String!
+  url: String!
+  location: String!
+  creator: User!
+}
+
+type Post {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  published: Boolean! @default(value: false)
+  title: String!
+  content: String!
+  author: User!
+}

@@ -1,0 +1,72 @@
+type Query {
+  feed: [Post!]!
+  picFeed: [Picture!]!
+  postDrafts: [Post!]!
+  post(id: ID!): Post
+  photoDrafts: [Picture!]!
+  photo(id: ID!): Picture
+  me: User
+}
+
+type Mutation {
+  signup(email: String!, password: String!, name: String!): AuthPayload!
+  login(email: String!, password: String!): AuthPayload!
+
+  createDraft(title: String!, content: String!): Post!
+  publish(id: ID!): Post!
+  deletePost(id: ID!): Post!
+
+  addPhoto(date: String!, title: String!, caption: String!, url: String!, location: String!): Picture!
+  publishPhoto(id: ID!): Picture!
+  deletePhoto(id: ID!): Picture!
+  editPhoto(id: ID!,date: String, title: String, caption: String, url: String, location: String): Picture!
+}
+
+type Subscription {
+  feedSubscription: Post
+  pictureFeed: Picture
+}
+
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
+type User {
+  id: ID!
+  email: String!
+  name: String!
+  posts: [Post!]!
+  pictures: [Picture!]!
+}
+
+type Picture {
+  id: ID!
+  published: Boolean!
+  date: String!
+  title: String!
+  caption: String!
+  url: String!
+  location: String!
+  creator: User!
+}
+
+type Post {
+  id: ID!
+  published: Boolean!
+  title: String!
+  content: String!
+  author: User!
+}
+
+type Feed {
+  photos: [Picture!]!
+  count: Int!
+}
+
+enum PictureOrder {
+  date_ASC
+  date_DESC
+  location_ASC
+  location_DESC
+}
