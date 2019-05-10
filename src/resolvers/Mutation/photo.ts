@@ -31,14 +31,10 @@ export const photo = {
     })
   },
 
-  async editPhoto(parent, { id, date, location, title, caption }, ctx: Context, info) {
+  async editPhoto(parent, args, ctx: Context, info) {
     const userId = getUserId(ctx)
     const photoExists = await ctx.prisma.$exists.picture({
-      id,
-      date,
-      location,
-      title,
-      caption,
+      id: args.id,
       creator: { id: userId },
     })
     if (!photoExists) {
@@ -46,8 +42,14 @@ export const photo = {
     }
 
     return ctx.prisma.updatePicture({
-      where: { id },
-      data: { title, date, location, caption },
+      where: { id: args.id },
+      data: {
+        title: args.title,
+        caption: args.caption,
+        date: args.date,
+        location: args.location,
+        published: false
+      }
     })
   },
 

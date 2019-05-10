@@ -19,7 +19,8 @@ type Mutation {
   addPhoto(date: String!, title: String!, caption: String!, url: String!, location: String!): Picture!
   publishPhoto(id: ID!): Picture!
   deletePhoto(id: ID!): Picture!
-  editPhoto(id: ID!,date: String, title: String, caption: String, url: String, location: String): Picture!
+  editPhoto(id: ID!,
+    title: String, caption: String, date: String, location: String): Picture!
 }
 
 type Subscription {
