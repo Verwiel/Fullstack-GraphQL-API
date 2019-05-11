@@ -64,8 +64,8 @@ type Picture {
   id: ID!
   published: Boolean!
   date: String!
-  title: String!
-  caption: String!
+  title: String
+  caption: String
   url: String!
   location: String!
   creator: User!
@@ -81,8 +81,8 @@ input PictureCreateInput {
   id: ID
   published: Boolean
   date: String!
-  title: String!
-  caption: String!
+  title: String
+  caption: String
   url: String!
   location: String!
   creator: UserCreateOneWithoutPicturesInput!
@@ -97,8 +97,8 @@ input PictureCreateWithoutCreatorInput {
   id: ID
   published: Boolean
   date: String!
-  title: String!
-  caption: String!
+  title: String
+  caption: String
   url: String!
   location: String!
 }
@@ -129,8 +129,8 @@ type PicturePreviousValues {
   id: ID!
   published: Boolean!
   date: String!
-  title: String!
-  caption: String!
+  title: String
+  caption: String
   url: String!
   location: String!
 }

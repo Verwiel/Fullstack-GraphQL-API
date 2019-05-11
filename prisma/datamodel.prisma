@@ -11,8 +11,8 @@ type Picture {
   id: ID! @id
   published: Boolean! @default(value: false)
   date: String!
-  title: String!
-  caption: String!
+  title: String
+  caption: String
   url: String!
   location: String!
   creator: User!

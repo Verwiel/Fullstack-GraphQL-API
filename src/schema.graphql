@@ -16,11 +16,10 @@ type Mutation {
   publish(id: ID!): Post!
   deletePost(id: ID!): Post!
 
-  addPhoto(date: String!, title: String!, caption: String!, url: String!, location: String!): Picture!
+  addPhoto(date: String!, title: String, caption: String, url: String!, location: String!): Picture!
   publishPhoto(id: ID!): Picture!
   deletePhoto(id: ID!): Picture!
-  editPhoto(id: ID!,
-    title: String, caption: String, date: String, location: String): Picture!
+  editPhoto(id: ID!, title: String, caption: String, date: String, location: String): Picture!
 }
 
 type Subscription {
@@ -45,8 +44,8 @@ type Picture {
   id: ID!
   published: Boolean!
   date: String!
-  title: String!
-  caption: String!
+  title: String
+  caption: String
   url: String!
   location: String!
   creator: User!

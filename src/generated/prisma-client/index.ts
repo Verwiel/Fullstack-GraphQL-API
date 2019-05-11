@@ -466,8 +466,8 @@ export interface PictureCreateInput {
   id?: Maybe<ID_Input>;
   published?: Maybe<Boolean>;
   date: String;
-  title: String;
-  caption: String;
+  title?: Maybe<String>;
+  caption?: Maybe<String>;
   url: String;
   location: String;
   creator: UserCreateOneWithoutPicturesInput;
@@ -682,8 +682,8 @@ export interface PictureCreateWithoutCreatorInput {
   id?: Maybe<ID_Input>;
   published?: Maybe<Boolean>;
   date: String;
-  title: String;
-  caption: String;
+  title?: Maybe<String>;
+  caption?: Maybe<String>;
   url: String;
   location: String;
 }
@@ -933,8 +933,8 @@ export interface Picture {
   id: ID_Output;
   published: Boolean;
   date: String;
-  title: String;
-  caption: String;
+  title?: String;
+  caption?: String;
   url: String;
   location: String;
 }
@@ -1335,8 +1335,8 @@ export interface PicturePreviousValues {
   id: ID_Output;
   published: Boolean;
   date: String;
-  title: String;
-  caption: String;
+  title?: String;
+  caption?: String;
   url: String;
   location: String;
 }
