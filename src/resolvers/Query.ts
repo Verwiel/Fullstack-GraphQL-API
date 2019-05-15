@@ -1,12 +1,12 @@
 import { getUserId, Context } from '../utils'
 
 export const Query = {
-  feed(parent, args, ctx: Context) {
+  postFeed(parent, args, ctx: Context) {
     return ctx.prisma.posts({ where: { published: true } })
   },
 
   picFeed(parent, args, ctx: Context) {
-    return ctx.prisma.pictures()
+    return ctx.prisma.pictures({ where: { published: true } })
   },
 
   postDrafts(parent, args, ctx: Context) {

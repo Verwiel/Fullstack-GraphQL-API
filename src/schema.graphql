@@ -1,10 +1,13 @@
 type Query {
-  feed: [Post!]!
+  postFeed: [Post!]!
   picFeed: [Picture!]!
+
   postDrafts: [Post!]!
-  post(id: ID!): Post
   photoDrafts: [Picture!]!
+
+  post(id: ID!): Post
   photo(id: ID!): Picture
+  
   me: User
 }
 
@@ -24,7 +27,7 @@ type Mutation {
 
 type Subscription {
   feedSubscription: Post
-  pictureFeed: Picture
+  pictureFeedSubscription: Picture
 }
 
 type AuthPayload {
@@ -59,7 +62,12 @@ type Post {
   author: User!
 }
 
-type Feed {
+type PostFeed {
+  posts: [Post!]!
+  count: Int!
+}
+
+type PhotoFeed {
   photos: [Picture!]!
   count: Int!
 }
@@ -69,4 +77,13 @@ enum PictureOrder {
   date_DESC
   location_ASC
   location_DESC
+}
+
+enum PostOrderByInput {
+  description_ASC
+  description_DESC
+  url_ASC
+  url_DESC
+  createdAt_ASC
+  createdAt_DESC
 }

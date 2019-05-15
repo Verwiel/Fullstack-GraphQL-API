@@ -14,7 +14,7 @@ export const Subscription = {
     },
   },
 
-  pictureFeed: {
+  pictureFeedSubscription: {
     subscribe: async (parent, args, ctx: Context) => {
       return ctx.prisma.$subscribe
         .picture({
