@@ -22,10 +22,6 @@ export const Query = {
     return ctx.prisma.posts({ where })
   },
 
-  post(parent, { id }, ctx: Context) {
-    return ctx.prisma.post({ id })
-  },
-
   photoDrafts(parent, args, ctx: Context) {
     const id = getUserId(ctx)
 
@@ -37,10 +33,6 @@ export const Query = {
     }
 
     return ctx.prisma.pictures({ where })
-  },
-
-  photo(parent, { id }, ctx: Context) {
-    return ctx.prisma.picture({ id })
   },
 
   me(parent, args, ctx: Context) {

@@ -4,9 +4,6 @@ type Query {
 
   postDrafts: [Post!]!
   photoDrafts: [Picture!]!
-
-  post(id: ID!): Post
-  photo(id: ID!): Picture
   
   me: User
 }
