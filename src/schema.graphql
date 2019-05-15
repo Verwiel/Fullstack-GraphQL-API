@@ -5,6 +5,8 @@ type Query {
   postDrafts: [Post!]!
   photoDrafts: [Picture!]!
   
+  singlePost(id: ID!): Post	
+  singlePhoto(id: ID!): Picture
   me: User
 }
 
@@ -14,6 +16,7 @@ type Mutation {
 
   createDraft(title: String!, content: String!): Post!
   publish(id: ID!): Post!
+  editPost(id: ID!, title: String, content: String): Post!
   deletePost(id: ID!): Post!
 
   addPhoto(date: String!, title: String, caption: String, url: String!, location: String!): Picture!

@@ -1,6 +1,14 @@
 import { getUserId, Context } from '../utils'
 
 export const Query = {
+  singlePost(parent, { id }, ctx: Context) {	
+    return ctx.prisma.post({ id })	
+  },
+
+  singlePhoto(parent, { id }, ctx: Context) {	
+    return ctx.prisma.picture({ id })	
+  },
+
   postFeed(parent, args, ctx: Context) {
     return ctx.prisma.posts({ where: { published: true } })
   },
