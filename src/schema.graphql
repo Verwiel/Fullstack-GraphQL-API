@@ -19,7 +19,7 @@ type Mutation {
   editPost(id: ID!, title: String, content: String): Post!
   deletePost(id: ID!): Post!
 
-  addPhoto(date: String!, title: String, caption: String, url: String!, location: String!): Picture!
+  addPhoto(date: String!, title: String!, caption: String, url: String!, location: String!): Picture!
   publishPhoto(id: ID!): Picture!
   deletePhoto(id: ID!): Picture!
   editPhoto(id: ID!, title: String, caption: String, date: String, location: String): Picture!

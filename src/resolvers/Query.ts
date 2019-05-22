@@ -23,7 +23,7 @@ export const Query = {
     const where = {
       published: false,
       author: {
-        id,
+        id
       },
     }
 
@@ -34,9 +34,9 @@ export const Query = {
     const id = getUserId(ctx)
 
     const where = {
-      publishedPhoto: false,
+      published: false,
       creator: {
-        id,
+        id
       },
     }
 
